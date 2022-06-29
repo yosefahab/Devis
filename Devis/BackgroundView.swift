@@ -11,12 +11,12 @@ struct BackgroundView: View {
     let style: Quote.QuoteStyle
     var body: some View {
         if (style.isGradient) {
-        RoundedRectangle(cornerRadius: CGFloat(Constants.roundedRectRadius))
+        RoundedRectangle(cornerRadius: CGFloat(Constants.roundedRadius))
             .fill(LinearGradient(gradient: Gradient(colors: [style.theme.mainColor,Color.black]), startPoint: .top, endPoint: .bottom))
             .ignoresSafeArea()
             .opacity(Double(style.colorOpacity))
         } else {
-            RoundedRectangle(cornerRadius: CGFloat(Constants.roundedRectRadius))
+            RoundedRectangle(cornerRadius: CGFloat(Constants.roundedRadius))
                 .fill(style.theme.mainColor)
                 .opacity(Double(style.colorOpacity))
                 .ignoresSafeArea()

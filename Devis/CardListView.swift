@@ -15,29 +15,56 @@ struct CardListView: View {
     @State private var newQuoteData: Quote.QuoteData = Quote.QuoteData()
     @State private var newImage: UIImage? = nil
     @State private var isPresentingNewQuoteView: Bool = false
+    @State private var sortedByFav: Bool = false
+    
+    @State private var searchText = ""
+    
+    private var filteredQuotes: [Quote] {
+       if searchText.isEmpty { return quotes }
+        else { return quotes.filter { $0.text.contains(searchText) } }
+   }
     
     var body: some View {
-        List {
+        List{
             ForEach($quotes) { $quote in
                 NavigationLink(destination: QuoteView(quote: $quote)) {
                     CardView(quote: quote)
                 }
-                .listRowBackground(
-                    listRowBackgroundView(quoteStyle: quote.quoteStyle)
-                        .opacity(Double(quote.quoteStyle.colorOpacity))
-                )
-                .listRowSeparatorTint(.white)
+                .searchable(text: $searchText)
+                .listRowBackground(listRowBackgroundView(quoteStyle: quote.quoteStyle))
+//                .listRowSeparatorTint(.white)
             }
             .onDelete(perform: deleteQuote)
         }
-        .navigationTitle("Your Quotes")
-        .toolbar {
-            Button(action: {
-                isPresentingNewQuoteView = true
-            }) {
-                Image(systemName: "plus")
+        .navigationBarTitle("Your Quotes", displayMode: .inline)
+//        .navigationTitle("Your Quotes")
+        .toolbar{
+            ToolbarItem{
+                Menu(content: {
+                    Button(action: sortByDefault){
+                        HStack{
+                            if (!sortedByFav){ Image(systemName: "checkmark.circle") }
+                            Text("Unsorted")
+                        }
+                    }
+                    Button(action: sortByFav){
+                        HStack{
+                            if (sortedByFav){ Image(systemName: "checkmark.circle") }
+                            Text("Sort by Favourites")
+                        }
+                    }
+                }) {
+                    Image(systemName: "ellipsis.circle")
+                }
             }
-            .accessibilityLabel("New quote")
+            ToolbarItem(placement: .bottomBar) {
+                Button(action: {
+                    isPresentingNewQuoteView = true
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                }
+                .accessibilityLabel("New quote")
+            }
         }
         .sheet(isPresented: $isPresentingNewQuoteView){
             NavigationView {
@@ -55,7 +82,7 @@ struct CardListView: View {
                             Button("Add") {
                                 var tempQuote = Quote(data: newQuoteData)
                                 tempQuote.quoteStyle.setImage(image: newImage)
-                                quotes.append(tempQuote)
+                                quotes.insert(tempQuote, at: 0)
                                 newQuoteData = Quote.QuoteData()
                                 newImage = nil
                                 isPresentingNewQuoteView = false
@@ -68,10 +95,20 @@ struct CardListView: View {
         .onChange(of: scenePhase){ phase in
             if phase == .inactive { saveAction() }
         }
-        
     }
     private func deleteQuote(at index: IndexSet){
         quotes.remove(atOffsets: index)
+    }
+    private func sortByFav(){
+        sortedByFav = true
+        quotes.sort(by: { $0.isFavourite && !$1.isFavourite})
+    }
+    private func sortByDefault(){
+        sortedByFav = false
+        quotes.sort(by: { $0.id != $1.id})
+    }
+    private func searchQuotes(for text: String){
+        searchText = text
     }
 }
 

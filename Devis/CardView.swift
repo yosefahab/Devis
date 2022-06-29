@@ -13,26 +13,27 @@ struct CardView: View {
     var body: some View {
         VStack{
             Text(quote.type)
-                .font(.custom("Courier New",size: 16))
+                .font(.custom(Constants.typeFont, size: Constants.listFontSize))
                 .padding(.bottom)
                 .accessibilityAddTraits(.isHeader)
                 .accessibilityLabel("\(quote.type) quote")
             Text(quote.text)
-                .font(.custom("Arima Madurai", size: 18).bold())
+                .font(.custom(Constants.textFont, size: Constants.listQuoteTextSize).bold())
                 .padding(.bottom)
-                .lineLimit(1)
                 .truncationMode(.tail)
                 .accessibilityLabel(quote.text)
             HStack{
                 Label(quote.author,systemImage: "person")
-                .font(.custom("Copperplate", size: 16))
+                    .font(.custom(Constants.authorFont, size: Constants.listFontSize))
                 .accessibilityLabel("By \(quote.author)")
                 Spacer()
-                Image(systemName: quote.isFavourite ? "heart.fill" : "heart")
+                Image(systemName: quote.isFavourite ? Constants.heartFill : Constants.heart)
                     .foregroundColor(.red)
                     .accessibilityLabel(quote.isFavourite ? "Favourited quote" : "")
             }
+            .padding(.bottom,0.2)
         }
+        .lineLimit(Constants.lineLimit)
         .padding()
         .foregroundColor(quote.quoteStyle.whiteFont ? .white : .black)
         .accessibilityElement(children: .combine)

@@ -22,20 +22,20 @@ struct QuoteView: View {
                     VStack{
                         Text(quote.type)
                             .padding()
-                            .font(.custom("Courier New", size: 23))
+                            .font(.custom(Constants.typeFont, size: Constants.quoteViewFontSize))
                             .accessibilityLabel("\(quote.type) quote")
                         Spacer()
                         Text(quote.text)
                             .padding()
-                            .font(.custom("Arima Madurai", size: 32).bold())
+                            .font(.custom(Constants.textFont, size: Constants.quoteViewTextFontSize).bold())
                             .multilineTextAlignment(.center)
-                            .lineSpacing(10)
-                            .minimumScaleFactor(0.3)
+                            .lineSpacing(Constants.quoteViewLineSpacing)
+                            .minimumScaleFactor(Constants.quoteViewMinSpaceFactor)
                             .accessibilityLabel(quote.text)
                         Spacer()
                         Text(quote.author)
                             .padding()
-                            .font(.custom("Copperplate", size: 23))
+                            .font(.custom(Constants.authorFont, size: Constants.quoteViewFontSize))
                             .accessibilityLabel("By \(quote.author)")
                     }
                     .foregroundColor(quote.quoteStyle.whiteFont ? .white : .black)
@@ -45,10 +45,10 @@ struct QuoteView: View {
                     Button(action: {
                         quote.isFavourite = !quote.isFavourite
                     }) {
-                        Image(systemName: quote.isFavourite ? "heart.fill" : "heart")
+                        Image(systemName: quote.isFavourite ? Constants.heartFill : Constants.heart)
                             .foregroundColor(.red)
                             .padding()
-                            .font(.system(size: CGFloat(Constants.SFSize)).bold())
+                            .font(.system(size: Constants.SFSize).bold())
                             .accessibilityLabel("Add or remove from favourites")
                     }
                     
@@ -60,7 +60,7 @@ struct QuoteView: View {
                         Image(systemName: "pencil")
                             .foregroundColor(Color.white)
                             .padding()
-                            .font(.system(size: CGFloat(Constants.SFSize)).bold())
+                            .font(.system(size: Constants.SFSize).bold())
                             .accessibilityLabel("Edit Quote")
                     }
                 }
@@ -71,7 +71,7 @@ struct QuoteView: View {
                     .resizable()
                     .opacity(Double(quote.quoteStyle.imageOpacity))
                     .scaledToFill()
-                    .blur(radius: 2.0)
+                    .blur(radius: Constants.quoteViewImgBlur)
                     .blendMode(.screen)
                     .edgesIgnoringSafeArea(.all)
             )

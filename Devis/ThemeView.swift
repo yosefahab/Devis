@@ -15,17 +15,17 @@ struct ThemeView: View {
     var body: some View {
         ZStack {
             if (isGradient){
-                RoundedRectangle(cornerRadius: CGFloat(Constants.roundedRectRadius))
+                RoundedRectangle(cornerRadius: Constants.roundedRadius)
                         .fill(LinearGradient(gradient: Gradient(colors: [theme.mainColor,Color.black]), startPoint: .leading, endPoint: .trailing))
             }
             else{
-                RoundedRectangle(cornerRadius: CGFloat(Constants.roundedRectRadius))
+                RoundedRectangle(cornerRadius: Constants.roundedRadius)
                     .fill(theme.mainColor)
             }
-            Label(theme.name, systemImage: "paintpalette")
+            Text(theme.name)
                 .padding(4)
         }
-        .foregroundColor(whiteFont ? .white : .black)
+        .foregroundColor(isGradient ? .white : theme.accentColor)
         .fixedSize(horizontal: false, vertical: true)
     }
 }

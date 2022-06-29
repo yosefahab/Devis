@@ -38,20 +38,20 @@ struct EditQuoteView: View {
                 }
             }
             
-            Section(header: HStack{Image(systemName: "camera");Text("Image")}){
+            Section(header: HStack{Image(systemName: Constants.camera);Text("Image")}){
                 HStack {
                     Text("Background Image")
                     Spacer()
                     
                     Menu(content: {
                         Button(action: { isPresentingImagePicker = true }){
-                            HStack{ Text("Add Image");Image(systemName: "camera") }
+                            HStack{ Text("Add Image");Image(systemName:  Constants.camera) }
                         }
                         Button(role:.destructive,action: { deleteImage() }){
                             HStack{ Text("Delete Image");Image(systemName: "trash") }
                         }
                     }) {
-                        Image(systemName: "camera")
+                        Image(systemName:  Constants.camera)
                     }
                 }
                 HStack{

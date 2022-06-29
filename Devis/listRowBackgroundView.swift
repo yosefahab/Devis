@@ -10,17 +10,21 @@ import SwiftUI
 struct listRowBackgroundView: View {
     let quoteStyle: Quote.QuoteStyle
     var body: some View {
-        if quoteStyle.isGradient {
-            AnyView(
-                LinearGradient(
-                    gradient: Gradient(colors: [quoteStyle.theme.mainColor, Color.black]),
-                    startPoint: .leading, endPoint: .trailing
+        VStack{
+            if quoteStyle.isGradient {
+                AnyView(
+                    LinearGradient(
+                        gradient: Gradient(colors: [quoteStyle.theme.mainColor, Color.black]),
+                        startPoint: .leading, endPoint: .trailing
+                    )
                 )
-            )
+            }
+            else {
+                quoteStyle.whiteFont ? AnyView(Color.black) : AnyView(Color.white)
+            }
         }
-        else {
-            quoteStyle.whiteFont ? AnyView(Color.black) : AnyView(Color.white)
-        }
+        .cornerRadius(Constants.roundedRadius)
+        .padding([.top,.bottom],5)
     }
 }
 
