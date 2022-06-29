@@ -11,10 +11,10 @@ struct BackgroundView: View {
     let style: Quote.QuoteStyle
     var body: some View {
         if (style.isGradient) {
-        RoundedRectangle(cornerRadius: CGFloat(Constants.roundedRadius))
-            .fill(LinearGradient(gradient: Gradient(colors: [style.theme.mainColor,Color.black]), startPoint: .top, endPoint: .bottom))
-            .ignoresSafeArea()
-            .opacity(Double(style.colorOpacity))
+            RoundedRectangle(cornerRadius: CGFloat(Constants.roundedRadius))
+                .fill(LinearGradient(gradient: Gradient(colors: [style.theme.mainColor,Color.black]), startPoint: .top, endPoint: .bottom))
+                .opacity(Double(style.colorOpacity))
+                .ignoresSafeArea()
         } else {
             RoundedRectangle(cornerRadius: CGFloat(Constants.roundedRadius))
                 .fill(style.theme.mainColor)
@@ -26,6 +26,6 @@ struct BackgroundView: View {
 
 struct quoteBackgroundView_Previews: PreviewProvider {
     static var previews: some View {
-        BackgroundView(style: Constants.sampleQuotes[0].quoteStyle)
+        BackgroundView(style: Constants.sampleQuotes[1].quoteStyle)
     }
 }

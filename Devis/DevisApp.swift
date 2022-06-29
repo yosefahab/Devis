@@ -16,7 +16,7 @@ struct DevisApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                CardListView(quotes: $store.quotes){
+                CardListView(quotes: $store.quotes) {
                     Task {
                         do {
                             try await QuoteStore.save(quotes: store.quotes)
@@ -37,7 +37,6 @@ struct DevisApp: App {
                     store.quotes = []
                 }) { wrapper in
                     Text(wrapper.guidance)
-//                    ErrorView(errorWrapper: wrapper)
                 }
             }
         }

@@ -11,7 +11,7 @@ struct CardView: View {
     let quote: Quote
     
     var body: some View {
-        VStack{
+        VStack {
             Text(quote.type)
                 .font(.custom(Constants.typeFont, size: Constants.listFontSize))
                 .padding(.bottom)
@@ -22,7 +22,7 @@ struct CardView: View {
                 .padding(.bottom)
                 .truncationMode(.tail)
                 .accessibilityLabel(quote.text)
-            HStack{
+            HStack {
                 Label(quote.author,systemImage: "person")
                     .font(.custom(Constants.authorFont, size: Constants.listFontSize))
                 .accessibilityLabel("By \(quote.author)")

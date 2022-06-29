@@ -12,14 +12,13 @@ struct QuoteView: View {
 
     @State private var isPresentingEditView: Bool = false
     @State private var inputImage: UIImage?
-    
     @State private var data = Quote.QuoteData()
     
     var body: some View {
-        ZStack{
+        ZStack {
             BackgroundView(style: quote.quoteStyle)
-            VStack(alignment:.center){
-                    VStack{
+            VStack(alignment:.center) {
+                    VStack {
                         Text(quote.type)
                             .padding()
                             .font(.custom(Constants.typeFont, size: Constants.quoteViewFontSize))
@@ -76,22 +75,21 @@ struct QuoteView: View {
                     .edgesIgnoringSafeArea(.all)
             )
         }
-        .sheet(isPresented: $isPresentingEditView){
-            NavigationView{
+        .sheet(isPresented: $isPresentingEditView) {
+            NavigationView {
                 EditQuoteView(data: $data, inputImage: $inputImage)
-                    .toolbar{
-                        ToolbarItem(placement: .cancellationAction){
-                            Button("Cancel"){ isPresentingEditView = false }
+                    .toolbar {
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button("Cancel") { isPresentingEditView = false }
                         }
-                        ToolbarItem(placement: .confirmationAction){
-                            Button("Done"){
+                        ToolbarItem(placement: .confirmationAction) {
+                            Button("Done") {
                                 isPresentingEditView = false
                                 quote.update(from: data, image: inputImage)
                             }
                         }
                     }
-                    .navigationBarTitleDisplayMode(.inline)
-                    .navigationTitle("Edit Quote")
+                    .navigationBarTitle("Edit Quote", displayMode: .inline)
             }
         }
     }

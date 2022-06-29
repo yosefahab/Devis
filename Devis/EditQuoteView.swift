@@ -17,7 +17,7 @@ struct EditQuoteView: View {
     var body: some View {
         Form{
 
-            Section(header: HStack{Image(systemName: "paintpalette");Text("Style")}){
+            Section(header: HStack { Image(systemName: "paintpalette");Text("Style") }) {
                 Toggle("Gradient", isOn: $data.quoteStyle.isGradient)
                 Toggle("White Font", isOn: $data.quoteStyle.whiteFont)
 
@@ -38,23 +38,24 @@ struct EditQuoteView: View {
                 }
             }
             
-            Section(header: HStack{Image(systemName: Constants.camera);Text("Image")}){
+            Section(header: HStack { Image(systemName: Constants.camera);Text("Image") }){
                 HStack {
                     Text("Background Image")
                     Spacer()
                     
                     Menu(content: {
-                        Button(action: { isPresentingImagePicker = true }){
-                            HStack{ Text("Add Image");Image(systemName:  Constants.camera) }
+                        Button(action: { isPresentingImagePicker = true }) {
+                            HStack { Text("Add Image");Image(systemName:  Constants.camera) }
                         }
-                        Button(role:.destructive,action: { deleteImage() }){
-                            HStack{ Text("Delete Image");Image(systemName: "trash") }
+                        Button(role:.destructive,action: { deleteImage() }) {
+                            HStack { Text("Delete Image");Image(systemName: "trash") }
                         }
                     }) {
                         Image(systemName:  Constants.camera)
                     }
+                    
                 }
-                HStack{
+                HStack {
                     Text("Opacity")
                         .opacity(hasImage ? 0.4 : 1)
                     Slider(
@@ -65,30 +66,30 @@ struct EditQuoteView: View {
                     .disabled(hasImage)
                 }
             }
-            .sheet(isPresented: $isPresentingImagePicker){
+            .sheet(isPresented: $isPresentingImagePicker) {
                 ImagePicker(image: $inputImage)
             }
             
-            Section(header: HStack{Image(systemName: "questionmark");Text("Type")}){
+            Section(header: HStack { Image(systemName: "questionmark");Text("Type")}) {
 //                TextField("Type",text: $data.type)
                 Picker("Type", selection: $data.type) {
-                    ForEach(Constants.types.allCases){ type in
+                    ForEach(Constants.types.allCases) { type in
                         Text(type.id).tag(type)
                     }
                 }
             }
             
-            Section(header: HStack{Image(systemName: "person");Text("Author")}){
+            Section(header: HStack { Image(systemName: "person");Text("Author") }){
                 TextField("Author", text: $data.author)
             }
             
-            Section(header: HStack{Image(systemName: "quote.opening");Text("Quote")}){
+            Section(header: HStack { Image(systemName: "quote.opening");Text("Quote") }) {
                 TextField("Text",text: $data.text)
             }
         }
     }
    
-    func deleteImage(){ inputImage = nil }
+    func deleteImage() { inputImage = nil }
 }
 
 struct EditQuoteView_Previews: PreviewProvider {
