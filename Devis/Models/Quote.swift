@@ -16,16 +16,13 @@ struct Quote : Identifiable , Codable {
     var isFavourite: Bool
     var quoteStyle: QuoteStyle
     
-    init(id: UUID = UUID(), type: String, quote: String, author: String, isFavourite: Bool = false, quoteStyle: QuoteStyle = QuoteStyle()){
+    init(id: UUID = UUID(), type: String = "", quote: String = "", author: String = "", isFavourite: Bool = false, quoteStyle: QuoteStyle = QuoteStyle()){
         self.id = id
         self.type = type
         self.text = quote
         self.author = author
         self.isFavourite = isFavourite
         self.quoteStyle = quoteStyle
-    }
-    init(){
-        self.init(type: Constants.types.Motivational.rawValue, quote: "", author: "")
     }
 }
 
@@ -67,7 +64,7 @@ extension Quote {
         }
     }
     struct QuoteData {
-        var type: String = Constants.types.Motivational.rawValue
+        var type: String = ""
         var text: String = ""
         var author: String = ""
         var isFavourite: Bool = false

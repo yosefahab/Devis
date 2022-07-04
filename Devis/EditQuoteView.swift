@@ -71,12 +71,7 @@ struct EditQuoteView: View {
             }
             
             Section(header: HStack { Image(systemName: "questionmark");Text("Type")}) {
-//                TextField("Type",text: $data.type)
-                Picker("Type", selection: $data.type) {
-                    ForEach(Constants.types.allCases) { type in
-                        Text(type.id).tag(type)
-                    }
-                }
+                TextField("Type",text: $data.type)
             }
             
             Section(header: HStack { Image(systemName: "person");Text("Author") }){

@@ -16,6 +16,11 @@ struct QuoteView: View {
     
     var body: some View {
         ZStack {
+            if quote.quoteStyle.colorOpacity < 1 && quote.quoteStyle.imageOpacity < 1 {
+                RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                    .fill(Color.black)
+                    .ignoresSafeArea()
+            }
             BackgroundView(style: quote.quoteStyle)
             VStack(alignment:.center) {
                     VStack {
@@ -29,7 +34,7 @@ struct QuoteView: View {
                             .font(.custom(Constants.textFont, size: Constants.quoteViewTextFontSize).bold())
                             .multilineTextAlignment(.center)
                             .lineSpacing(Constants.quoteViewLineSpacing)
-                            .minimumScaleFactor(Constants.quoteViewMinSpaceFactor)
+                            .minimumScaleFactor(Constants.quoteViewMinScaleFactor)
                             .accessibilityLabel(quote.text)
                         Spacer()
                         Text(quote.author)
@@ -47,7 +52,7 @@ struct QuoteView: View {
                         Image(systemName: quote.isFavourite ? Constants.heartFill : Constants.heart)
                             .foregroundColor(.red)
                             .padding()
-                            .font(.system(size: Constants.SFSize).bold())
+                            .font(.system(size: Constants.quoteViewSFSize).bold())
                             .accessibilityLabel("Add or remove from favourites")
                     }
                     
@@ -59,7 +64,7 @@ struct QuoteView: View {
                         Image(systemName: "pencil")
                             .foregroundColor(Color.white)
                             .padding()
-                            .font(.system(size: Constants.SFSize).bold())
+                            .font(.system(size: Constants.quoteViewSFSize).bold())
                             .accessibilityLabel("Edit Quote")
                     }
                 }

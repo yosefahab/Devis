@@ -15,11 +15,11 @@ struct ThemeView: View {
     var body: some View {
         ZStack {
             if (isGradient) {
-                RoundedRectangle(cornerRadius: Constants.roundedRadius)
+                RoundedRectangle(cornerRadius: Constants.cornerRadius)
                         .fill(LinearGradient(gradient: Gradient(colors: [theme.mainColor,Color.black]), startPoint: .leading, endPoint: .trailing))
             }
             else {
-                RoundedRectangle(cornerRadius: Constants.roundedRadius)
+                RoundedRectangle(cornerRadius: Constants.cornerRadius)
                     .fill(theme.mainColor)
             }
             Text(theme.name)

@@ -33,7 +33,7 @@ struct CardView: View {
             }
             .padding(.bottom,0.2)
         }
-        .lineLimit(Constants.lineLimit)
+        .lineLimit(1)
         .padding()
         .foregroundColor(quote.quoteStyle.whiteFont ? .white : .black)
         .accessibilityElement(children: .combine)

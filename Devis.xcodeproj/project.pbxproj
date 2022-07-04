@@ -14,13 +14,15 @@
 		EB1E0B93286376C000905B0B /* listRowBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1E0B92286376C000905B0B /* listRowBackgroundView.swift */; };
 		EB6958E128627430007BEFFD /* QuoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6958E028627430007BEFFD /* QuoteStore.swift */; };
 		EB6C27B5285E7B980019BE31 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6C27B4285E7B980019BE31 /* ImagePicker.swift */; };
+		EB98ED48286EFD09008EB479 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB98ED47286EFD09008EB479 /* SplashScreenView.swift */; };
 		EBB4BBB9285CFA6E0061535D /* DevisApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4BBB8285CFA6E0061535D /* DevisApp.swift */; };
 		EBB4BBBB285CFA6E0061535D /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4BBBA285CFA6E0061535D /* QuoteView.swift */; };
-		EBB4BBBD285CFA6F0061535D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB4BBBC285CFA6F0061535D /* Assets.xcassets */; };
 		EBB4BBC0285CFA6F0061535D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBB4BBBF285CFA6F0061535D /* Preview Assets.xcassets */; };
 		EBB4BBC8285D00250061535D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4BBC7285D00250061535D /* Constants.swift */; };
 		EBB4BBCC285D07DC0061535D /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB4BBCB285D07DC0061535D /* Quote.swift */; };
 		EBE44599285D147F005568EB /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBE44598285D147F005568EB /* Theme.swift */; };
+		EBE8080F28735410007B9406 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBE8080E28735410007B9406 /* Assets.xcassets */; };
+		EBE80811287377BD007B9406 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = EBE80810287377BD007B9406 /* README.md */; };
 		EBFE657E2860A8AE00AFF12A /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE657D2860A8AE00AFF12A /* CardView.swift */; };
 		EBFE65802860CFBF00AFF12A /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFE657F2860CFBF00AFF12A /* CardListView.swift */; };
 /* End PBXBuildFile section */
@@ -33,14 +35,16 @@
 		EB1E0B92286376C000905B0B /* listRowBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = listRowBackgroundView.swift; sourceTree = "<group>"; };
 		EB6958E028627430007BEFFD /* QuoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteStore.swift; sourceTree = "<group>"; };
 		EB6C27B4285E7B980019BE31 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		EB98ED47286EFD09008EB479 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		EBB4BBB5285CFA6E0061535D /* Devis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB4BBB8285CFA6E0061535D /* DevisApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevisApp.swift; sourceTree = "<group>"; };
 		EBB4BBBA285CFA6E0061535D /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
-		EBB4BBBC285CFA6F0061535D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBB4BBBF285CFA6F0061535D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EBB4BBC7285D00250061535D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EBB4BBCB285D07DC0061535D /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		EBE44598285D147F005568EB /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		EBE8080E28735410007B9406 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Devis/Assets.xcassets; sourceTree = "<group>"; };
+		EBE80810287377BD007B9406 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../iOS/Devis/README.md; sourceTree = "<group>"; };
 		EBFE657D2860A8AE00AFF12A /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		EBFE657F2860CFBF00AFF12A /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +63,8 @@
 		EBB4BBAC285CFA6E0061535D = {
 			isa = PBXGroup;
 			children = (
+				EBE80810287377BD007B9406 /* README.md */,
+				EBE8080E28735410007B9406 /* Assets.xcassets */,
 				EBB4BBB7285CFA6E0061535D /* Devis */,
 				EBB4BBB6285CFA6E0061535D /* Products */,
 			);
@@ -77,6 +83,7 @@
 			children = (
 				EBB4BBC6285D00130061535D /* Models */,
 				EBB4BBB8285CFA6E0061535D /* DevisApp.swift */,
+				EB98ED47286EFD09008EB479 /* SplashScreenView.swift */,
 				EBFE657F2860CFBF00AFF12A /* CardListView.swift */,
 				EBFE657D2860A8AE00AFF12A /* CardView.swift */,
 				EBB4BBBA285CFA6E0061535D /* QuoteView.swift */,
@@ -84,7 +91,6 @@
 				EB1B5706285D2D460004AEA3 /* ThemeView.swift */,
 				EB1E0B8E28634B8C00905B0B /* BackgroundView.swift */,
 				EB1E0B92286376C000905B0B /* listRowBackgroundView.swift */,
-				EBB4BBBC285CFA6F0061535D /* Assets.xcassets */,
 				EBB4BBBE285CFA6F0061535D /* Preview Content */,
 			);
 			path = Devis;
@@ -169,8 +175,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE80811287377BD007B9406 /* README.md in Resources */,
+				EBE8080F28735410007B9406 /* Assets.xcassets in Resources */,
 				EBB4BBC0285CFA6F0061535D /* Preview Assets.xcassets in Resources */,
-				EBB4BBBD285CFA6F0061535D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +190,7 @@
 			files = (
 				EB1E0B912863556C00905B0B /* ErrorWrapper.swift in Sources */,
 				EBFE65802860CFBF00AFF12A /* CardListView.swift in Sources */,
+				EB98ED48286EFD09008EB479 /* SplashScreenView.swift in Sources */,
 				EB1B5707285D2D460004AEA3 /* ThemeView.swift in Sources */,
 				EBB4BBCC285D07DC0061535D /* Quote.swift in Sources */,
 				EBFE657E2860A8AE00AFF12A /* CardView.swift in Sources */,
@@ -341,7 +349,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -371,7 +379,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

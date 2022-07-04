@@ -9,10 +9,12 @@ import SwiftUI
 
 struct Constants{
     
-    static let roundedRadius: CGFloat = 16.0
-    static let SFSize: CGFloat = 30
+    static let appName: String = "Devis"
+
+    static let cornerRadius: CGFloat = 16.0
     
-    static let quoteViewMinSpaceFactor: CGFloat = 0.3
+    static let quoteViewSFSize: CGFloat = 30
+    static let quoteViewMinScaleFactor: CGFloat = 0.3
     static let quoteViewLineSpacing: CGFloat = 10
     static let quoteViewImgBlur: CGFloat = 2.0
     static let quoteViewTextFontSize: CGFloat = 23
@@ -21,7 +23,6 @@ struct Constants{
     static let listFontSize: CGFloat = 16
     static let listQuoteTextSize: CGFloat = 18
     
-    static let lineLimit: Int = 1
     static let typeFont: String = "Courier New"
     static let textFont: String = "Arima Madurai"
     static let authorFont: String = "Copperplate"
@@ -30,12 +31,6 @@ struct Constants{
     static let heartFill: String = "heart.fill"
     static let camera: String = "camera"
     
-    enum types: String, CaseIterable, Identifiable{
-        case Motivational
-        case Inspirational
-
-        var id: String { return self.rawValue }
-    }
     static let sampleQuotes: [Quote] = [Quote(type: "Motivational",
                                               quote: "We suffer not from the events in our lives,\n but from our judgement about them//We suffer not from the events in our lives,\n but from our judgement about themWe suffer not from the events in our lives,\n but from our judgement about themWe suffer not from the events in our lives,\n but from our judgement about themWe suffer not from the events in our lives,\n but from our judgement about them",
                                               author: "Epictetus",

@@ -23,7 +23,7 @@ struct CardListView: View {
             ForEach($quotes) { $quote in
                 if isFiltered(quote: quote) {
                     NavigationLink(destination: QuoteView(quote: $quote)) {
-                        CardView(quote: quote)
+                            CardView(quote: quote)
                     }
                     .listRowBackground(listRowBackgroundView(quoteStyle: quote.quoteStyle))
                 }
@@ -47,7 +47,7 @@ struct CardListView: View {
                         }
                     }
                 }) {
-                    Image(systemName: "ellipsis.circle")
+                    Image(systemName: "arrow.up.arrow.down")
                 }
             }
             ToolbarItem(placement: .bottomBar) {

@@ -16,12 +16,12 @@ struct listRowBackgroundView: View {
                     gradient: Gradient(colors: [quoteStyle.theme.mainColor, Color.black]),
                     startPoint: .leading, endPoint: .trailing
                 )
-                .cornerRadius(Constants.roundedRadius)
+                .cornerRadius(Constants.cornerRadius)
                 .padding([.top,.bottom],5)
             )
         } else {
             quoteStyle.theme.mainColor
-                .cornerRadius(Constants.roundedRadius)
+                .cornerRadius(Constants.cornerRadius)
                 .padding([.top,.bottom],5)
         }
     }
